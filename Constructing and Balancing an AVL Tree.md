@@ -1,38 +1,51 @@
-# Ex. No: 16B - Constructing and Balancing an AVL Tree in Python
 
-## AIM:
+Ex. No: 16B - Constructing and Balancing an AVL Tree in Python
+
+AIM:
 To write a Python program to construct an **AVL tree**, balance it, and print the nodes **before and after balancing** using the appropriate packages and built-in function.
 
----
+ALGORITHM:
+1. Define Node Structure
+Create a class for nodes with value, left, right, and height.
 
-## ALGORITHM:
+2. Insert Node (Standard BST Insertion)
+Recursively insert based on BST rules.
 
-**Step 1**: Start the program.
+3. Update Height
+After insertion, update height of each ancestor node.
 
-**Step 2**: Define a method `getDictTree(tree)` to return the `dict_tree` or structure of the AVL tree.
+4. Get Balance Factor
+For each node, compute:
+balance = height(left) - height(right)
 
-**Step 3**: Define a method `Construct_AVL(L)` to:
-- Create a binary tree from the list `L`.
-- Print the tree **before balancing**.
-- Sort and reinsert the nodes in a balanced manner (simulating AVL behavior).
-- Print the tree **after balancing**.
+5. Balance the Node
+Perform rotations based on balance:
 
-**Step 4**: Create a list `L` of integers.
+Left Left Case → Right Rotation
 
-**Step 5**: Call `Construct_AVL(L)` to build and balance the tree.
+Right Right Case → Left Rotation
 
-**Step 6**: End the program.
+Left Right Case → Left-Right Rotation
 
----
+Right Left Case → Right-Left Rotation
 
-## PYTHON PROGRAM
+6. In-order Traversal
+To display the tree contents.
+
+
+PYTHON PROGRAM
 ```
-ENTER YOUR CODE
+from TreeAVL.AVL import AVL
+def getDictTree(self):
+    return self.dict_tree
+def Construct_AVL(L):
+    tree=AVL(L)
+    print(getDictTree(tree))
+L=[12,8,18,5,11,17,4,7,2]
 ```
 
-## OUTPUT
-```
-```
+OUTPUT
+![image](https://github.com/user-attachments/assets/06b9f1c2-ba96-429b-9751-7509d4c9cc49)
 
-## RESULT
-
+RESULT
+Thus, Python program to construct an **AVL tree**, balance it, and print the nodes **before and after balancing** using the appropriate packages and built-in function was successfully implemented and verified.
