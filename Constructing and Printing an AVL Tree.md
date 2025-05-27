@@ -1,35 +1,66 @@
-# Ex. No: 16A - Constructing and Printing an AVL Tree in Python
 
-## AIM:
+Ex. No: 16A - Constructing and Printing an AVL Tree in Python
+
+AIM:
 To write a Python program to construct an **AVL tree** and print the nodes of it using the appropriate packages and built-in function.
 
----
 
-## ALGORITHM:
+ALGORITHM:
 
-**Step 1**: Start the program.
+Step 1: Define the AVL Node Structure
+Each node should store:
 
-**Step 2**: Define a function `getDictTree(tree)` to return the **dict_tree** of an AVL tree.
+value
 
-**Step 3**: Define a function `Construct_AVL(L)` to:
-- Create an **AVL tree** from the list `L`.
-- Get and print the **dict_tree** using `getDictTree(tree)`.
+left and right children
 
-**Step 4**: Define a list `L` with integer values.
+height of the node (for balancing)
 
-**Step 5**: Call `Construct_AVL(L)` to build the tree and print the result.
+Step 2: Define Helper Functions
+get_height(node) – Returns height of a node.
 
-**Step 6**: End the program.
+get_balance(node) – Returns balance factor.
 
----
+left_rotate(node) – Rotates the subtree left.
 
-## PYTHON PROGRAM
+right_rotate(node) – Rotates the subtree right.
+
+Step 3: Insert into the AVL Tree
+Recursively insert like in a binary search tree.
+
+Update height of ancestors.
+
+Calculate balance factor and perform rotations if needed:
+
+Left-Left → Right rotate
+
+Right-Right → Left rotate
+
+Left-Right → Left-Right rotate
+
+Right-Left → Right-Left rotate
+
+Step 4: Print the Tree
+Use in-order traversal to print nodes in sorted order.
+
+
+PYTHON PROGRAM
 ```
-ENTER YOUR CODE HERE
+from TreeAVL.AVL import AVL
+
+def getDictTree(self):
+ return self.dict_tree
+
+def Construct_AVL(L):
+  tree = AVL(L)
+  print(getDictTree(tree))
+
+L=[12,8,18,5,11,17,4,7,2]
+
 ```
 
-## OUTPUT
-```
-```
+OUTPUT
+![image](https://github.com/user-attachments/assets/ac349eb2-5f01-4e83-8b9a-4288a07525ac)
 
-## RESULT
+RESULT
+Thus,Python program to construct an **AVL tree** and print the nodes of it using the appropriate packages and built-in function was successfully implemented and verified.
